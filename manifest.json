@@ -1,0 +1,53 @@
+{
+	// Required
+	"name":"zac",
+	"version":"1.0",
+	// Recommended
+	"description":"DSKB TwitBot For FIFA WC2010 Goal!",
+	"icons":{
+		"16":"icon16.png",
+		"48":"icon48.png",
+		"24":"icon24.png",
+		"128":"icon128.png"
+	},
+	// Pick one (or none)
+	"page_action":{
+		"default_icon":"icon24.png",
+		"popup":"popup.html"
+	},
+	// Add any of these that you need
+	"background_page":"background.html",
+	"content_scripts":[
+		{
+			"matches":[
+				"http://ubuntu.local/*",
+				"http://dskb.cindey.local/*",
+				"http://t.dskb.cn/*"
+			],
+			"js":[
+				"jquery-1.4.2.min.js",
+				"common.js",
+				"doc_start.js"
+			],
+			"run_at":"document_start"
+		},
+		{
+			"matches":[
+			    "http://ubuntu.local/*",
+				"http://dskb.cindey.local/*",
+				"http://t.dskb.cn/*"
+			],
+			"js":[
+				"jquery-1.4.2.min.js",
+				"common.js",
+				"doc_idle.js"
+			]
+		}
+	],
+	"permissions":[
+		"tabs",
+		"http://ubuntu.local/*",
+		"http://dskb.cindey.local/*",
+		"http://t.dskb.cn/*"
+	]
+}

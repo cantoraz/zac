@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+* {
+	font-family: sans-serif;
+}
+
+input[type=text] {
+	font-family: monospace;
+}
+
+input[type=text]:FOCUS {
+	background: #FAFFBD;
+}
+
+#main {
+	width: 480px;
+}
+
+.team_wrapper {
+}
+
+.team_wrapper .title {
+	font-size: large;
+}
+
+.team_wrapper .team_name {
+	margin: 0;
+	width: 108px;
+}
+
+.team_wrapper li {
+	list-style: decimal outside;
+}
+
+.team_wrapper .player_no {
+	width: 30px;
+}
+
+.team_wrapper .player_name {
+	width: 100px;
+}
+
+#settings li {
+	float: left;
+	width: 240px;
+	height: 24px;
+}
+
+#settings label.long {
+	display: inline-block;
+	width: 75px;
+}
+
+#settings label.short {
+	display: inline-block;
+	width: 180px;
+}
+
+#time_begin {
+	width: 160px;
+}
+
+#time_added_1,#time_added_2,#time_tune_1,#time_tune_2 {
+	width: 30px;
+}
+
+#buttons div {
+	float: left;
+	margin: 0 5px;
+}
+
+#info {
+	width: 100%;
+}

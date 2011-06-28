@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+	chrome.extension.onRequest.addListener(function(request, sender) {
+		if (request.msg == 't.dskb.cn') {
+			chrome.pageAction.show(sender.tab.id);
+		} else if (request.msg == 'btn_test'
+				|| request.msg == 'btn_timing'
+				|| request.msg == 'btn_cheeron'
+				|| request.msg == 'btn_cheeron_1'
+				|| request.msg == 'btn_cheeron_2'
+				|| request.msg == 'btn_goal') {
+			twit(request.text);
+		}
+	});
+
+	function twit(text) {
+		if (text == null) {
+			debugMsg(LOG_LEVELS.error, 'null text to twit!');
+		} else {
+			chrome.tabs.getSelected(null, function(tab) {
+				chrome.tabs.sendRequest(tab.id, {
+					msg : 'twit',
+					text : text
+				}, function(response) {
+					debugMsg(LOG_LEVELS.info, response.farewell)
+				});
+			});
+			debugMsg(LOG_LEVELS.info, text);
+		}
+	}
+</script>
+</head>
+</html>
